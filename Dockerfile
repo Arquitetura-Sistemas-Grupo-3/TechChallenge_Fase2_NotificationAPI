@@ -13,10 +13,9 @@ RUN dotnet publish NotificationsAPI/NotificationsAPI.csproj \
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
 WORKDIR /app
 
-RUN adduser --disabled-password --gecos "" --uid 1001 appuser
-USER appuser
+USER app
 
-COPY --from=build --chown=appuser:appuser /app/publish .
+COPY --from=build --chown=app:app /app/publish .
 
 ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
