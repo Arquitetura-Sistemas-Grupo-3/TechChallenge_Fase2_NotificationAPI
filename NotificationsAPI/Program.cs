@@ -25,6 +25,8 @@ builder.Services.AddMassTransit(x =>
             h.Password(password);
         });
 
+        cfg.UseRawJsonSerializer(RawSerializerOptions.All, isDefault: true);
+
         cfg.ReceiveEndpoint("notifications-user-created", e =>
         {
             e.ConfigureConsumer<UserCreatedConsumer>(context);
