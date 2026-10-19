@@ -1,9 +1,9 @@
 namespace Contracts.Events;
 
 public record PaymentProcessedEvent(
-    Guid OrderId,
-    Guid UserId,
-    Guid GameId,
+    int OrderId,
+    int UserId,
+    int GameId,
     string GameName,
     string UserEmail,
     decimal Price,
@@ -12,6 +12,6 @@ public record PaymentProcessedEvent(
 
 public enum PaymentStatus
 {
-    Approved,
-    Rejected
+    Approved = 1,
+    Rejected = 2
 }
