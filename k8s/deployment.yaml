@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
         - name: notifications-api
-          image: notifications-api:latest
-          imagePullPolicy: IfNotPresent
+          image: viniciushp00/notification-api
           ports:
             - containerPort: 8080
               name: http
